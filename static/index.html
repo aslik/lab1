@@ -3,23 +3,109 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<title>HCI Project Portfolio</title>
+	<link href='https://fonts.googleapis.com/css?family=Lustria' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Quicksand:400,700,300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.css" rel="stylesheet">
+	<link href="css/hci.css" rel="stylesheet">
 </head>
 
 <body>
-	<!-- this is a comment in HTML -->
-	<h1>Asli Kimya</h1> <!-- h1 through h5 are headers. The higher the number, the smaller the header -->
-	<h4>Project Portfolio</h4>
 
-	<!-- p means paragraph -->
-	<p>Scott is an Associate Professor of Cognitive Science and Computer Science & Engineering at UC San Diego, where he is a co-founder and Associate Director of the Design Lab. He previously served as Associate Professor of Computer Science at Stanford, where he co-directed the HCI Group, held the Bredt Faculty Scholar chair, and was a founding participant in the d.school. </p>
+	<div class="container-fluid">
+	  <div class="row">
+	    <div class="col-lg-12 black-header">
+	    	<h1 class="title">ASLI KIMYA</h1>
+	    	<h2 class="subtitle">Rapid Prototyper. Lean Designer.</h2> 
+	    	<h2 class="about-link">ABOUT ME</h2> 
+	    </div>
+	  </div>
 
-	<h4>Projects</h4>
-	<ol>
-		<li>Design Thinking</li>
-		<li>Needfinding</li>
-		<li>Prototyping</li>
-		<li>...</li>
-	</ol>
+	  <div class="row">
+	    <div class="col-lg-6 first-col content-col black">
+	    	<div class="image">
+	    		<a href="./index1.html">
+		    	<img src="./images/sq1.png">
+				<h3 class="proj proj-title"> AUTODESK INTERNSHIP </h3>
+  				<h3 class="proj proj-subtitle"> UX Front End</h3>
+  			</div>
+	    </div>
+
+	    <div class="col-lg-4 second-col content-col dark-gray">
+	    	<div class="image">
+		    	<img src="./images/sq3.png">
+				<h3 class="proj proj-title"> INNER JOURNEY </h3>
+  				<h3 class="proj proj-subtitle"> Architecture </h3>
+  			</div>	    	
+	    	
+	    </div>
+	    <div class="col-lg-2 third-col content-col white">
+	    	<div class="image">
+		    	<img src="./images/sq51.png">
+				<h3 class="proj proj-title art"> NUDITY </h3>
+  				<h3 class="proj proj-subtitle art"> Art </h3>
+  			</div>
+	    </div>
+	  </div>
+
+	  <div class="row row2">
+	    <div class="col-lg-6 content-col dark-gray">
+	    	<div class="image">
+		    	<img src="./images/sq2.png">
+				<h3 class="proj proj-title"> DSCHOOL PROJECT </h3>
+  				<h3 class="proj proj-subtitle"> Hardware & Software </h3>
+  			</div>
+	    </div>
+	    <div class="col-lg-4 second-col content-col light-gray">
+	   		<div class="image">
+		    	<img src="./images/sq4.png">
+				<h3 class="proj proj-title"> TUTORNOW</h3>
+  				<h3 class="proj proj-subtitle"> Mobile Application</h3>
+  			</div>
+	    </div>
+	    <div class="col-lg-2 content-col white">
+	    	<img class="image" src="./images/sq52.png">
+	    </div>
+	  </div>
+
+	  <div class="row">
+	  	<div class="col-lg-12"></div>
+	  </div>
+	</div>
+
+	<script type="text/javascript" language="javascript">
+         $(document).ready(function() {
+         	var non_foc_src;
+            $( ".content-col" ).hover(
+			  function() {
+			  	$(".image").css('display','none');
+			    $( this ).addClass( "focused" );
+			    var old=$( this ).find("img")[0].src;
+			    non_foc_src = old;
+			    var prefix = old.substring(0,59);
+			    prefix= "http://web.stanford.edu/~akimya/static/images/";
+			    var no = old.substring(48,49);
+			    if (no === "5") 
+			    	no = old.substring(48,50);
+			    console.log(prefix);
+			    console.log(no);
+
+			    $( this ).find("img")[0].src = prefix+"f"+no+".png";
+			    $(".focused .image").css('display','block');
+
+			  }, function() {
+			  	$(".image").css('display','block');
+			  	$( this ).find("img")[0].src = non_foc_src;
+			    $( this ).removeClass( "focused" );
+			  }
+			);
+         });
+      </script>
+
 </body>
 </html>
